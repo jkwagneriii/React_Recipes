@@ -6,7 +6,7 @@ import Recipe from './components/Recipe';
 import Alert from './components/Alert';
 
  
-const App = () => {
+const FoodSearch = () => {
     const [query, setQuery] = useState("")
     const [recipes, setRecipes] = useState([]);
     const [alert, setAlert] = useState("");
@@ -42,7 +42,7 @@ const App = () => {
 
     return (
         <div className="App">
-            <h1>Food Searching App</h1>
+            <h1>Find New Recipes</h1>
             <form className="search-form" onSubmit={onSubmit}>
                 {alert !== "" && <Alert alert={alert}/>}
                 <input 
@@ -62,4 +62,4 @@ const App = () => {
     )
 }
 
-export default App
+export default FoodSearch

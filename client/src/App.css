@@ -21,9 +21,9 @@ html {
 
 h1 {
   font-size: 8rem;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.3rem;
   font-style: italic;
-  color: #40b48e;
+  color: #e586f4;
   text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);
   text-transform: uppercase;
   margin: 4rem 0;
@@ -35,7 +35,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d3d3d3;
+  background-color: #ecb8f4;
   border-radius: 0.5rem;
   margin-bottom: 5rem;
   box-shadow: 1rem 2rem 5rem #aaa;
@@ -46,7 +46,7 @@ h1 {
   position: absolute;
   top: -3rem;
   left: 0;
-  background-color: rgb(233, 72, 72);
+  background-color: #40b48e;
   width: calc(100% - 0.4rem);
   border-radius: 0.5rem;
   padding: 0.2rem;
@@ -78,6 +78,13 @@ h1 {
 .search-form input[type="submit"] {
   width: 25%;
   text-transform: uppercase;
+  background-color: #e586f4;
+  color: #fff;
+}
+
+.search-form input[type="submit"]:hover {
+  width: 25%;
+  text-transform: uppercase;
   background-color: #40b48e;
   color: #fff;
 }
@@ -96,7 +103,7 @@ h1 {
   margin: 3rem;
   display: flex;
   flex-direction: column;
-  background-color: #d3d3d3;
+  background-color: #ecb8f4;
   padding: 2rem;
   position: relative;
   border-radius: 0.5rem;
@@ -124,10 +131,25 @@ h1 {
 
 .recipe a {
   font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.recipe a:hover {
+  font-size: 1.9rem;
   color: #40b48e;
 }
 
 .recipe button {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #e586f4;
+  border: none;
+  border-radius: 0.5rem;
+  height: 3rem;
+}
+
+.recipe button:hover {
   font-size: 2rem;
   text-transform: uppercase;
   color: #fff;
