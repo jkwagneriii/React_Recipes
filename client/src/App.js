@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import Axios from 'axios'
+import {v4 as uuidv4} from 'uuid';
 import './App.css'
+import Recipe from './components/Recipe';
 
-
+ 
 const App = () => {
     const [query, setQuery] = useState("")
     const [recipes, setRecipes] = useState([]);
@@ -42,7 +44,8 @@ const App = () => {
             <div className="recipes">
                 {/* Conditional statement to check if the recipes array is empty. If not empty, we need to receive the requested data. */}
                 {recipes !== [] && 
-                    recipes.map(recipe => <h2>{recipe.recipe.label}</h2>)}
+                    recipes.map(recipe => 
+                    <Recipe key={uuidv4()} recipe={recipe}/>)}
             </div>
         </div>
     )
