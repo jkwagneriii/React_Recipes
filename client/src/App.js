@@ -5,6 +5,7 @@ import './App.css'
 
 const App = () => {
     const [query, setQuery] = useState("")
+    const [recipes, setRecipes] = useState([]);
 
     const APP_ID = "8bacc5bd";
     const APP_KEY = "b60c242d9b21f12794d7e14b797c70ac";
@@ -13,7 +14,9 @@ const App = () => {
 
     const getData = async () => {
         const result = await Axios.get(url)
+        setRecipes(result.data.hits)
         console.log(result)
+        setQuery("");
     }
 
     const onChange = (event) => {
@@ -29,9 +32,18 @@ const App = () => {
         <div className="App">
             <h1>Food Searching App</h1>
             <form className="search-form" onSubmit={onSubmit}>
-                <input type="text" placeholder="Search Recipes" autocomplete="off" onChange={onChange}/>
+                <input 
+                type="text" 
+                placeholder="Search Recipes" autoComplete="off" 
+                onChange={onChange}
+                value={query}/>
                 <input type="submit" value="Search"/>
             </form>
+            <div className="recipes">
+                {/* Conditional statement to check if the recipes array is empty. If not empty, we need to receive the requested data. */}
+                {recipes !== [] && 
+                    recipes.map(recipe => <h2>{recipe.recipe.label}</h2>)}
+            </div>
         </div>
     )
 }
